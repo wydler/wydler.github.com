@@ -8,7 +8,7 @@ layout: default
 		{{ page.date | date_to_string }}
 		<span class="pull-right">
 {% for category in page.tags %}
-		<span class="label label-info">{{ category }}</span>
+			<span class="label label-info">{{ category }}</span>
 {% endfor %}
 		</span>
 	</p>
@@ -16,7 +16,8 @@ layout: default
 	<div>
 		{{ content }}
 	</div>
-	<h2>Comments</h2>
+	<br />
+	<h2><span class="glyphicon glyphicon-comment text-muted"></span> Comments</h2>
 	<div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
