@@ -6,8 +6,7 @@ categories: linux driver
 tags: linux driver install killer e2200
 ---
 
-In this post I will show you, how to install the Quallcomm Atheros Killer E2200 ethernet driver on (K)Ubuntu. I'm using a MSI Z87-G45 GAMING mainboard.
-
+In this post I will show you, how to install the Quallcomm Atheros Killer E2200 ethernet driver on (K)Ubuntu. I'm using a MSI Z87-G45 GAMING mainboard.  
 Unfortunately there are no drivers included in (K)Ubuntu 13.04 for this ethernet chip, so you need to compile and install it on your own.
 
 First you need to download the latest compat-drivers from [kernel.org][compat-drivers] and extract it.
@@ -67,6 +66,8 @@ To activate the driver run the following commands or just reboot your computer.
 $ sudo make unload
 $ sudo modprobe alx
 {% endhighlight %}
+
+Now everything sould work. If you have still problems, write a comment or send me a mail.
 
 [compat-drivers]: https://www.kernel.org/pub/linux/kernel/projects/backports/2013/03/04/compat-drivers-2013-03-04-u.tar.bz2
 [e2200-support-mod]: /download/e2200-support.patch
