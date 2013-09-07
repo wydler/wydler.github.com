@@ -3,12 +3,17 @@ layout: default
 title: WydlerIT Blog
 ---
 
-<div class="col-md-12">
-	<h1>Blog Posts</h1>
-	<dl class="dl-horizontal">
-{% for post in site.posts %}
-	<dt style="padding-top:6px;"><span>{{ post.date | date_to_string }}</span></dt>
-	<dd><a href="{{ post.url }}" style="font-size:1.4em">{{ post.title }}</a><br />{{ post.excerpt }}</dd>
+<div class="col-md-8">
+	<h1>About Me</h1>
+	<p>...</p>
+</div>
+
+<div class="col-md-4">
+	<h2>Latest Posts</h2>
+	<dl class="">
+{% for post in site.posts limit:10 %}
+	<dt style="padding-top:2px;"><span>{{ post.date | date_to_string }}</span></dt>
+	<dd><a href="{{ post.url }}" style="font-size:1.4em">{{ post.title }}</a></dd>
 {% endfor %}
 	</dl>
 </div>

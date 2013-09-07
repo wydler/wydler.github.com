@@ -10,6 +10,7 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 
+		<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/css/normalize.css">
@@ -23,12 +24,20 @@
 			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
 
-	
+
 		<div class="jumbotron">
 			<div class="container">
 				<ul class="nav nav-pills pull-right">
-					<li class="active"><a href="/">Home</a></li>
-					<li><a href="/">Blog</a></li>
+{% for link in site.navigation %}
+	{% assign active = nil %}
+	{% if page.url == link.url or page.layout == link.layout %}
+		{% assign active = 'active' %}
+	{% endif %}
+
+					<li class="{% if forloop.first %}first{% endif %} {{ active }} {% if forloop.last %}last{% endif %}">
+						<a href="{{ link.url }}">{{ link.text }}</a>
+					</li>
+{% endfor %}
 				</ul>
 				<h1><span>Wydler</span><b>IT</b> <span class="text-primary" style="font-variant:small-caps;font-family:Swanky and Moo Moo;font-size:1.2em">blog</span></h1>
 				<p class="lead" style="font-family:Swanky and Moo Moo"><em>All about hardware, software and more ...</em></p>

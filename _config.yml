@@ -1,3 +1,9 @@
 name: WydlerIT Blog
 markdown: redcarpet
 pygments: true
+
+navigation:
+- text: Home
+  url: /index.html
+- text: Blog
+  url: /blog/index.html
