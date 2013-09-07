@@ -2,17 +2,22 @@
 layout: default
 ---
 
-<div class="col-md-8">
-	<h1>About Me</h1>
-	<p>...</p>
-</div>
-
-<div class="col-md-4">
-	<h2>Latest Posts</h2>
-	<dl class="">
-{% for post in site.posts limit:10 %}
-	<dt style="padding-top:2px;"><span>{{ post.date | date_to_string }}</span></dt>
-	<dd><a href="{{ post.url }}" style="font-size:1.4em">{{ post.title }}</a></dd>
+<div class="col-md-9">
+	<h1>Blog</h1>
+	<dl class="dl-horizontal">
+{% for post in site.posts %}
+	<dt style="padding-top:6px;"><span>{{ post.date | date_to_string }}</span></dt>
+	<dd><a href="{{ post.url }}" style="font-size:1.4em">{{ post.title }}</a><br />{{ post.excerpt }}</dd>
 {% endfor %}
 	</dl>
+</div>
+<div class="col-md-3">
+	<h2>Tags</h2>
+{% for tag in site.tags %}
+	<span style="margin-right:10px">
+		<a href="/{{ tag | first | slugize }}/">
+			{{ tag | first }} <span class="badge">{{ tag | last | size }}</span>
+		</a>
+	</span>
+{% endfor %}
 </div>
