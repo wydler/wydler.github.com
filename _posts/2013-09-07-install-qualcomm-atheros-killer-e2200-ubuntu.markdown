@@ -16,7 +16,7 @@ $ wget https://www.kernel.org/pub/linux/kernel/projects/backports/2013/03/04/com
 $ tar -xjvf compat-drivers-2013-03-04-u.tar.bz2
 {% endhighlight %}
 
-Now you need to patch the driver with this file [Download][e2200-support-mod]. First we make a test run to see if there a problems with the patch.
+Now you need to patch the driver with this [file][e2200-support-mod] (to add support for the E2200 chip). First we make a test run to see if there a problems with the patch.
 
 {% highlight bash %}
 $ patch -p1 --dry-run < e2200-support-mod.patch
@@ -67,7 +67,7 @@ $ sudo make unload
 $ sudo modprobe alx
 {% endhighlight %}
 
-Now everything sould work. If you have still problems, write a comment or send me a mail.
+Now everything should work fine. If you have still problems, write a comment or send me a mail.
 
 [compat-drivers]: https://www.kernel.org/pub/linux/kernel/projects/backports/2013/03/04/compat-drivers-2013-03-04-u.tar.bz2
 [e2200-support-mod]: /download/e2200-support.patch
