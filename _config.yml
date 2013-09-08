@@ -5,5 +5,5 @@ pygments: true
 navigation:
 - text: Home
   url: /index.html
-- text: About Me
+- text: About
   url: /about.html
